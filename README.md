@@ -1,2 +1,2 @@
 # My-CP
-Nơi lưu trữ quá trình học thuật toán của hd7
+Ncc
