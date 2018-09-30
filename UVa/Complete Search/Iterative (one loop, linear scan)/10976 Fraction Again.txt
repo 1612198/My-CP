@@ -1,0 +1,5 @@
+So sánh 2 số thực: 
+    > abs(x-y) <=1e-9
+Lấy phần nguyên và phần trị của số thực
+    > double(fracPart) modf (double value, double* intPart);
+Đưa về chia hết ít bị lỗi hơn: Ta thấy x=yk/(y-k)

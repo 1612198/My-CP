@@ -1,0 +1,8 @@
+--Bài này có thể phát biểu lại là: Tìm dãy có tổng lỡn nhất mà < N
+Cách 1: Generate tất cả các dãy con của m track (2^m tập con) và tính tổng lần lượt
+		từng cái sau đó chọn ra trường hợp tốt nhất
+
+Cách 2: (đúng với ý đồ tác gỉa hơn) 
+		Dùng recursive backtracking bằng cách gỉam minutes sau mỗi lần ghi track từ
+		CD sang tape Recorder.
+		

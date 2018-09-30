@@ -1,0 +1,15 @@
+Bài này dùng 1 array<bit> để đánh dấu xem phút nào đã bận rồi
+bitset cpp:
+constructor: bitset<size> name(value);
+            value: integer,"010101101"
+method:
+        bitset& flip(); // chuyển 0->1, 1->0 all bits
+        bitset& flip(pos); // chuyể bit pos 1->0, 0->1
+        bitset& set();   //set (to one) all bits
+        bitset& set(pos,value=true); set bit pos = value (default true)
+        int size();
+        string to_string();
++ Do nối đuôi nên ta phải ko check end
++ Câu đắc nhất bài:
+   endi=min(endi+loop,1000000); để thống nhất cái chặn trên của for cha
+   với chặn trên của for con ta sài endi=min(endi,trên cha);

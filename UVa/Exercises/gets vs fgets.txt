@@ -1,0 +1,11 @@
+++ Cú pháp:
+ 	char* gets(char* str);
+ 	--> Reads Character from standard input(stdin) và lưu kiểu C string trong str cho đến khi gặp kí tự xuống dòng hoặc eof
+ 	--> Tự động thêm terminating null character cuối str
+ 	** Khác biệt: Ko lưu kí tư '\n' vào trong str
+
+ 	char* fgets(char* str,int num,FILE* stream);
+ 	--> Reads Characters from stream and lưu kiểu C string cho tới khi gặp kí tự xuống dòng hoặc eof
+ 	--> Tự động thêm terminating null character cuối str
+ 	--> Có thể điều chỉnh size num(tính cả \0 và đương nhiên có \n phía trước)
+ 	** Khác biệt: Lưu kí tự '\n' vào trong str

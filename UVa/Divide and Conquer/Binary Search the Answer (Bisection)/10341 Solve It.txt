@@ -1,0 +1,4 @@
+Vì f(x) là hàm đơn điệu gỉam (cái này có thể đoán là đơn điệu là đủ)
+Nên trong [0;1], f[0]*f[1]>0 (f[0], f[1] cùng dấu nhau) thì chắc chắn không có nghiệm (cùng nằm trên 0x hoặc dưới 0x), điều này cũng áp dụng trong bisection lo, mid
+Vẽ đồ thị f(x) ra ta sẽ thấy.
+*Vấn đề Implement: ta sẽ ép đoạn nghiệm về 1 đoạn nhỏ tới mức < EPS, lúc này đoạn này có thể coi là 1 gía trị, và để cho đẹp ta lấy gía trị ở giưa là (lo+hi)/2 thực ra lấy 2 mut lo hoặc hi đều ok, còn trong quá trình ép ta cứ để hi=mid hay lo=mid mà ko tinh chỉnh gì vì EPS  quá nhỏ.

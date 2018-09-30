@@ -1,0 +1,8 @@
+Từ dãy S, rút xuống sao cho có query
+=> lưu các serial của mỗi state (alphabet) vào 1 vector (cần 52 vector nhưng chơi luôn 256 vector)
+Với mỗi query, ta duyệt qua từng kí tự, với kí tự x thuộc state x ta vào vector['x'] kiểm tra xem serial của x trong query có vượt quá serial lớn nhất trong S hay ko? gỉa sử ta nhận được lower_bound là p thì kí tự y (liền sau x trong query) nếu tồn tại trong vector['y'] thì cũng phải năm ở vị trí >p  (bởi vì cùng trích kéo xuống thì sau phải có serial lớn hơn trước)
+
+Nếu vượt: => NOT MATCH vì không thể nào mà kéo từ cái gốc S mà lòi ra cái serial lớn hơn cái gốc được
+
+* Lower_bound(v.begin(),v.end(),value)  -> (>=); upper_bound(...)  -> (>)
+--> Trước khi tìm cận trên thì phải sort mảng cái đã.

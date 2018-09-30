@@ -1,0 +1,17 @@
+Bài toán là cho 1 dãy trọng lượng ô tô
+Ô tô đến ga trước là ô tô đứng trước
+Với mỗi ô tô đến ga, có 3 lựa chọn
+	+ Xếp ô tô đầu toa
+	+ Xếp ô tô cuối toa
+	+ Ra đảo (ko xếp)
+Sao cho sau khi ô tô đến hết, trên train ta được 1 dãy ô tô theo thứ tự trọng lượng gỉam dần
+++ Điều này có khác biệt là vs mỗi ô tô đến ta có thể bỏ đầu hoặc cuối nên khác so với bài toán
+tìm LIS hay DIS, tức là trật tự có thể thay đổi.
+Gỉai:
+	+ Xét ô tô thứ i (trọng lượng a[i]) là ô tô đầu tiên lên toa
+	Thì số ô tô tối đa có thể xếp là LIS(i->n) + LDS(i->n)-1
+	** Nghĩa là sau khi xếp xe i, những xe sau i, xe nào lớn hơn thì bỏ trước, xe nào nhỏ hơn thì bỏ sau
+	-> chuỗi tăng dài nhất từ i về cuối + chuỗi giảm dài nhất từ i về cuối - xe i (theo quy tắc Inclusion-Exclusion Principle)
+	=> Chúng ta cần gọi LIS[i], LDS[i] lần lươt là chuỗi tăng và gỉam dài nhất XUÂT PHÁT TẠI I
+	Điều này tương đương với ta Reverse(a,a+n) rồi xét kết thúc tại i
+	Bởi vì: Chuỗi tăng kết thúc tại i --{reverse}--> chuỗi gỉam bắt đầu tại i  //lấy đối xứng qua.

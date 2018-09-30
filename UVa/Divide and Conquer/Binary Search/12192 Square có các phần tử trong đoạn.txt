@@ -1,0 +1,7 @@
+Vì mảng đã xếp ko giảm theo chiều trái qua phải và trên xuống dưới nên 
+	plot[i][j] <= plot[i][j+1] <= plot[i+1][j+1]    (đường chéo)
+	plot[i][j] <= plot[i+1][j] <= plot[i+1][j+1]
+Vậy nên ta duyệt từng dòng tìm lower_bound(L) sau đó duyệt xuống đường chéo từ đó đến khi gặp phần tử > U thì dừng lại, mỗi lần xuống đường chéo là tăng sz lên 1  (lợi dụng biến sz luôn, sz=0 tức là tăng lên 1, sz=1 tăng lên 2, ...)
+* Nhập vào N rồi tạo mảng tĩnh với biến N vừa nhập vẫn ok nhé. 
+               (C++!=C)
+              

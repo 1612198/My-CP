@@ -1,0 +1,6 @@
+Vì đá nhỏ (S) chỉ có thể đáp (land on) 1 lần nên bước nhảy  (leap) tối thiểu phải đạt được để có thể đi qua và đi về (2 lần) là khoảng cách lớn nhất giữa các hoàn đá lớn (Big). 2 lần nên nếu đáp đá nhỏ lượt đi thì lượt về phải nhảy qua nó và nếu nhảy qua lượt đi thì lưọt về nên đáp qua nó. <- Sai vì còn trưòng hợp 2 đá nhỏ liên tiếp, B S S B, lượt đi ta nhảy 1-> 3 & lưọt về ta nhảy 4-> 2 dẫn tới distance=max(d(1,3),d(4,2)) < d(1,4)=d(4,1)
+Để có bước nhảy nhỏ nhất đảm bảo đi và về ta tính bước nhảy nhỏ nhất cần qua giữa 2 hòn đá lớn liên tiếp (this is sub-problem)
+Nếu giữa 2 Big có: 
++ <=1 đá nhỏ (small) thì leap = BigRight-BigLeft
++ >=2 thì từ BigLeft ta nhảy theo kiểu nhảy cóc, tức là cứ bỏ 1 small đến 1 small, vi các hòn đá sắp xếp theo tọa độ rồi nên đảm bảo 
+      leap là nhỏ nhất để qua 2 Big đó.

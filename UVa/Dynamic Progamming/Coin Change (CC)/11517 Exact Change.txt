@@ -1,0 +1,1 @@
+** Khác ở chỗ là ko phải 1 loại tiền có nhiều coins đâu mà này là coins cố định, nếu đã lấy thì không được lấy lại :)

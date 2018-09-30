@@ -1,0 +1,10 @@
+Lưu ý: Hàm next_permuation (tương tự có prev_permutation)
+- Nằm trong thư viện algorithm (using namespace std;)
+- cú pháp:
+    bool next_permutation(iterator first, iterator last);
+    * rearrange các elements từ [first,last) trong mảng (vector) truyền vào ở first, last.
+    * nếu được (có trật tự lớn hơn trật tự hiện tại) thì nó rearrange các phần tử đồng
+      thời return true;
+    * nếu không được (trật tự hiện tại đã lớn nhất) thì nó rearrange quay đầu về (trật tự min)
+      đồng thời return false
+- Example: (lên gg search next_permutation mà đọc)

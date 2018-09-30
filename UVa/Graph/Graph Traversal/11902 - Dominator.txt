@@ -1,0 +1,4 @@
+Ý tưởng của bài này là:
++ dfs(0) để xem những node nào 0 có thể đi đến (reachable), những node ko đi đến nghiễm nhiên ko có dominator (kể cả chính nó) (theo định nghĩa dominator in graph rồi)
++ Sau đó ta gỉa sử bỏ từng node trong những cái 0 reachable để xem từ 0 có thể đi đến những node nào, những node mà lúc trước (trước khi bỏ) 0 có thể đến mà giờ bỏ thì 0 unreachable chứng tỏ node đó (node đang bỏ nè) là dominator của cái thằng kia.
+=>> Nhưng cách làm thực sự thì ngược lại, ta cứ bỏ trước, sau đó chốt chiêu cuối bằng cách dfs(0) lại từ đầu. Thi những cái 0 unreachable sẽ bị bỏ đi.

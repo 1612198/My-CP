@@ -1,0 +1,6 @@
+runtime error: vector iterators incompatible
+-- Khi ta không truyền tham chiếu vector cho hàm: thì nó sẽ copy vector
+ra 1 vector mới và truyền vào hàm.
+  - Bản chất của vector là kiểu dữ liệu động nó lưu dưới heap nên khi copy
+    ra sẽ có địa chỉ khác dẫn đến so sánh iterator là không bao giờ giống nhau.
+==> Luôn luôn: int convertIt(vector<int> &m,vector<int>::iterator it)

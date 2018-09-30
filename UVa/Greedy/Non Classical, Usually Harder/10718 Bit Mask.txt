@@ -1,0 +1,16 @@
+/*cach giai:
+Duyệt các bít từ 31->0 của N
++ 	Nếu bit i của N là 1 (ON) thì điều tốt nhất là ta không cần bật
+	bit i của M (initial =0) nhưng nếu điều này làm cho M<L (cho M max 
+	có thể là bật toàn bộ các bit sau đó để check) thì phải 	bật bit i
+	 (bit i lúc này nhằm múc đích thỏa khoảng L,U chứ không giúp cho M|N lớn nhất)
++ 	Nếu bit i của N là 0 (OFF)  thì ta phải bật bit i của M lên
+	để M|N đạt lớn nhất nhưng nếu điều này làm cho M>U thì ta phải
+	tắt bit i đó đi. Bởi vì ta cần M|N max với L<=M<=U (lower,upper)
+- 	Ta duyệt từ trái qua phải (leftmost qua) để cho nó được 
+	M nhỏ nhất để  M|N là lớn nhất vì 2^i > 2^0+2^1+...+2^i-1
+- 	Còn trường hợp cần bật bit i của M để >L mà sau khi bật nó lại >U
+ 	thì nói thật nó đéo bao giờ có đáp án. Vì tại mỗi bit i có 2 Th
+ 	là 0 hoặc 1 mà cái nào cũng đéo được là sao, đề sẽ ko cho vậy nhé!
+*/
+Link tham khảo: https://abitofcs.blogspot.com/2014/07/a-bit-of-bitmask-uva-10718-bit-mask.html

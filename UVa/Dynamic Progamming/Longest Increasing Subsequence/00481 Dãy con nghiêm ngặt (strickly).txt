@@ -1,0 +1,2 @@
+Đòi hỏi dãy con phải là dãy tối ưu nhất tại từng vị trí, vì vậy ta phải chọn cách O(nlogk) để làm.
+++ Nhớ L_id[pos]=i; nhé 

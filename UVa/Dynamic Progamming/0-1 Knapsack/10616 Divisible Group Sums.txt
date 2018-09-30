@@ -1,0 +1,30 @@
+Bài này là 1 dạng khác của 0-1 Knapsack
+Khác biệt:
+ Nếu như kia là tập con có số phần tử tùy ý thì đây là tập con có 
+ số phần tử cố định, nên ta thêm 1 biến cnt để đếm số phần tử là 
+ ok
+ -> Còn ý tưởng vẫn là Tại mỗi vị trí yêu hay không yêu thôi (lấy hay bỏ ý)
+
+**dp:
+Đặt F[i][j][k]: Tập hợp xét từ A[1] đến A[i], chọn ra j thằng có
+tổng chia D dư k
+Why?
+Cái đề: Cho tập n phần tử, chọn ra m phần tử sao cho tổng chia 
+cho D dư 0
+Thì ta thu nhỏ lại để build lên là: tập còn i phần tử, chọn ra j phần tử sao cho có tổng chia cho D dư k.
+Đặng khi mở rộng i lên, thì 
++ nếu chọn A[i]: F[i][j][k]=F[i-1][j-1][(k-A[i])%D]
++ ko chon A[i]: F[i][j][k]=F[i-1][j][k]
+Thường số phần tử để làm dòng, (đứng đầu)
+Chúng ta phải lưu lại số dư k vì khi mở rộng tập hợp (i) thì ví dụ A[i] chia D dư 3 thì cần 1 tập chia D dư D-3 để chia hết, tức 
+là từ chia dư sang chia hết, nó phụ thuộc lẫn nhau.
+Nếu ta chỉ Để F[i][j] thì đó là việc tìm tập sao cho mọi phần tử 
+đều chia hết cho k.
+NX: Cái nào cần lưu lại phục vụ tính toàn về sau phải lưu  lại.
+
+* Từ công thức truy hồi, ta phân tích, à nó về 0 là trường hợp cơ sở để build lên
+
+
+
+
+ Link tham khảo: https://turing13.wordpress.com/2016/03/11/uva-10616-divisible-group-sums/

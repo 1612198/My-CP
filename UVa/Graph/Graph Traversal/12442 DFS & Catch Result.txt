@@ -1,0 +1,25 @@
+Time limit is 1 sec and N <= 50K, so we certainly need to cache results.
+
+int dfs(int u) {
+    vis[u] = true;
+    int tot = 0;
+    if(graph[u] != -1 && !vis[graph[u]])
+        tot += 1 + dfs(graph[u]);
+    vis[u] = false;
+    return sum[u] = tot;
+}
+
+Vd input: 
+	4
+	1 2
+	2 3
+	3 2
+	4 2
+
+
+Thì có 1 cái cycle: 1->2->3->(2). Vertex lọt vào 1 trong bất cứ cái nào cũng là lọt trong cycle. 
+Khi đã lọt vào trong cycle thì ko có đường nào thoát ra cả. Vì vậy nên ms catch lại tránh tính nhiều lần.
+1: 1->2->3  sum(1)=2: nếu trưởng send cho 1 thì 1 forwarding được 2 thằng nữa
+2: 2->3     sum(2)=1
+3: 3->2     sum(3)=1: Nếu xét độc lập thì là vậy, nhưng ta đã catch result vào trong cycle thì thằng ở cuối chain(cycle)
+			luôn truyền đi ít hơn thằng liền trước 1.

@@ -1,0 +1,32 @@
+2 prerequisites of DP
+	+ Problem has optimal sub-structures
+	+ Problem has overlapping sub-problems
+- Cách giải:
+	+ state (trạng thái) 
+		Ex: (money, g): số kết quả cần tính sau khi đã loại bỏ trùng là money*g, đây là trạng thái để phân biệt kết quả này với kết quả khác => độ phức tạp |money|*|g|
+		int shop(money,g) : số tiền đã chi sau khi mua tới garment g (dĩ nhiên số tiền còn lại là tham số money)
+		
+	+ Memo Table (memory table): Bảng lưu các trạng thái kết quả ta đã tính để tránh tính lại lần 2
+	+ Top-down vs Bottom-up:
+		++ Top-Down: gần với ý tưởng Back-tracking, chỉ tính những gía trị cần
+			-- chậm nếu nhiều sub-prolems được revisited bởi vì function call overhead
+			-- Memory limit Exceed
+		++ Bottom-Up: Nhanh hơn nếu nhiều sub-problems được gặp lại, có thể tiết kiệm không gian nhớ với 'space saving trick' technique
+			-- Tính đủ tất cả các state dựa vào base state (kĩ thuật lợi dụng chỉ số memo table)
+			-- Not intuitive (trực quan) với người thích recursive
+Problems:
+I. Classical Examples:
+	1. Max 1D Range Sum   (00507)
+	2. Max 2D Range Sum   (00108)
+	3. Longest Increasing Subsequence (LIS)
+	4. Knapsack (Subnet Sum)
+	5. Coin Change (CC) - The General Version
+	6. Traveling Salesman Problems (TSP)
+II. Non-classical Examples
+	1. UVa 10943 - How do you add?
+	2. UVa 10003 - Cutting Sticks
+
+
+
+
+* Range: dãy -> liên tiếp != subsequence

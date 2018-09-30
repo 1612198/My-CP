@@ -1,0 +1,24 @@
+Bài toán là cho n cities và khoảng cách giữa chúng (tất cả các khoảng cách luôn).
+TÌm lộ trình ngắn nhất để salesman đi từ 1 city, qua tất cả n-1 city còn lại và trở về city ban đầu.
+Với n<=12: Vẫn có thể dùng backtracking.
+	Bởi vì Độ phức tạp = (n-1)!, 11!=40M (đủ)
+	--> Xem 00216-Getting in Line
+	
+Với n<=16: Dùng dp : Bitmask+dp
+	Bởi vì tsp(pos,nxt); có tất cả nx2^n states
+	Mỗi state cần O(n) để tính
+	Vậy độ phức tạp là n^2 * 2^n
+	thay n=16: 16^2*2^16=17M
+	--> Xem 10496 - Collecting Beepers
+
+=> Chuyển qua cách bottom-up:
+	Lật ngưọc lại thôi.
+	Topdown khi bảng nhớ quá lớn thôi.!
+
+** Nhận xét:
+Quy hoạch động thì thường quan tâm tới vài vấn đề:
+1. Chọn các trạng thái
+2. Chi phí chuyển trạng thái 
+	Ý là chi phí để từ dp[x] qua dp[y]
+	+ Thường là O(1) thật ra là O(2)// chọn hay ko chọn
+	+ Hoặc là O(n) vét máng

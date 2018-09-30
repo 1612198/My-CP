@@ -1,0 +1,14 @@
+- Đối với 1d Array
+	+ Các phần tử bị bỏ lỡ (omitted) (nghĩa là đã có ít nhất 1 cái được khỏi tạo) thì sẽ được auto khởi tạo = 0
+		Vd int arr[5]={1}; => 1 0 0 0 0
+	+ Còn tất cả không được khởi tạo thì tất cả sẽ là rác (trash)
+		Vd int arr[5];  => rác rác rác rác rác
+- Đối với 2d Array: Thật ra nó cùng cơ chế với 1d thôi
+    +   int arr[3][3]= {1}; => 1 rac rac (cũng hên xuôi có thể là rác (dòng cột là biến (lấy từ input or phép gán)), 
+    													có thể là 0 (dòng cột là hằng số))
+    						  0 rac rac
+    						  0 rac rac
+    + int arr[3][3];   => rac hết
+
+* memset(array, -1, sizeof array); //1d, 2d, 3d đều được (chỉ có 0 vs -1 thôi nhé)
+

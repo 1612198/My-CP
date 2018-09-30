@@ -1,0 +1,9 @@
+Bài này là ví dụ điển hình của Max 2D Range Sum.
+-- Các approval cũng giống như Max 1D Range Sum.
++ c1: O(n^6)
++ c2: O(n^4): nâng cấp cái c1 thông qua cộng dồn (cumulative) ở bước tiền xử lý (pre-process)
++ c3: Áp dụng Kadane 's Algorithm đổ dọc như sau:
+	++ Cộng dồn (cumulative) trên mỗi rows
+	++ sau đó chặn 2 đầu l, r rồi sổ dọc xuống để tính maximum mỗi matrix rộng (r-l) dài j (j chạy từ dòng 0 đến dòng n-1)
+	--> chọn ra matrix có tổng lớn nhất là xong.
+	Time Complexity: O(n^3) n=100 -> ok

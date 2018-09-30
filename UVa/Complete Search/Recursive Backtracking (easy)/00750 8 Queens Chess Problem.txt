@@ -1,0 +1,7 @@
+-- Bài này có 2 cách theo như mạch tác giả trình bày:
+  Cách 1: sinh hoán vị và check điều kiện đường chéo với fixed position
+  Cách 2: Backtrack(), hình như Halim viết thiếu else thì phải :v (ừ, ko else thì phải return ở base case)
+** memset
+    void * memset ( void * ptr, int value, size_t num );
+    Fill block of memory
+    Sets the first num bytes of the block of memory pointed by ptr to the specified value (interpreted as an unsigned char)

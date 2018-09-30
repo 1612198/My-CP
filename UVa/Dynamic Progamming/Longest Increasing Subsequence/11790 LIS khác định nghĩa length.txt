@@ -1,0 +1,3 @@
+Bình thường, LIS là Longest Increasing Subsequence nghĩa là dãy con tăng dài nhất. Length (danh từ của long) ở đây là mỗi phần tử của dãy sẽ tính length = 1, còn bài này mỗi phần tử sẽ cho 1 length khác nhau. Đấy là khác biệt.
+=> THì ta đổi cách đánh gía length thôi, tăng thì vẫn tăng thôi, chỉ có dài là hơi khác thôi.
+** Đặt tên 's chạy không được nhé bố. thông cảm :v

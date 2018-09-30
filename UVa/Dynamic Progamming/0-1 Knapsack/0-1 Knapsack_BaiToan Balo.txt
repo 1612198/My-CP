@@ -1,0 +1,23 @@
+Đề: Cho n items, mỗi items có value Vi và weight Wi, i thuộc [0..n-1]
+1 cái knapsack (ba lô) size = S. (cùng loại với weight)
+Chọn ra những cái items nào bỏ vào balo để đưọc gía trị lớn nhất.
+* Tên gọi khác: Subset Sum
+---> Cách giải: Quy hoạch động (:v)
+	Đầu tiên, mọi bài toán đều có thể gỉai bằng pp vét máng (quay lui) cho nên ta thử quay lui (TƠÍ ĐÍCH RÔÌ LUI)
++ Tại mỗi items: có 2 TH là lấy hoặc bỏ (w[i]=w[i] or w[i]=0)
+Cho nên độ phức tạp giải thuật là O(2^n)
+int backtrack(id,remW) 
+	+id: chỉ số duyệt đến hàng nào á (như lý thuyết)
+	+remW là sức chứa còn lại
+	+backtrack() return về gía trị ba lô chứa (sau khi hoàn toàn tới đích rồi á với cái việc chọn hay bỏ item row[i]), chỉ return khi đến đích thôi (tới đích đưọc 1 th sau đó nó cứ lui 1 nất rồi tới đích,,, nhúng nhúng nhúng á)
+Thay tên backtrack cho sinh động  = value (val)
+* Return 0: ko chọn nghĩa là chọn cái 0 thôi.
+
+				Top-down versus  Buttom-up
+2 cái bảng nhớ hoàn toàn khác nhau nhé. (đéo liên quan)
+	Top-down: Xây dựng theo kiểu recursive backtracking, tới đích rồi dựt lui
+
+	Bottom-up: xây dựng theo kiểu thu nhỏ bài toán lại sau đó bung lần ra theo quy luật (thu nhỏ input lại rồi bung ra)
+	+ F[i][j]: gía trị lớn nhât mà balo có thể chứa 
+	trong các item từ 0->i-1 và sức chứa balo là j
+	=> đáp án là F[n][S]; (chả liên quan gì tới memoization cả)

@@ -1,0 +1,30 @@
+Tìm dãy con tăng dài nhất
+Ta dùng quy hoạch động:
++ Gọi LIS(i) là độ dài chuỗi con tăng dài nhất kết thúc tại a[i]
+	++ Với i=0:  LIS(0)=1
+	++ Với i>0   LIS(i)=max(LIS(j))+1 với j thuộc [0..i-1] và a[j]<a[i]
+	Minh họa:
+	for(int i=1;i<n;i++){
+		int maxj=-1;
+		for(int j=0;j<i;j++){
+			if(LIS[j]>maxj && a[j]<a[i]) maxj=LIS[j];
+		}
+		LIS[i]=maxj+1;
+	}
+	-> O(n^2)
+	** Có thể dùng kĩ thuật lính canh đặt phần tử thiệt nhỏ ở đầu và thiệt lớn ở cuối để 
+	   cho subsequence kết quả luôn xuất phát ở đầu và kết thúc ở cuối và chọn LIS(cuối) ra kết quả
+	   nhưng điều này cũng ko cần thiết lắm. Vì nó ko gỉam được độ phức tạp.
+
++ Tìm solution:
+	C1: Truy vết (tracing): dùng 1 mảng T[]: T[i] lưu vị trí của phần tử đứng trước a[i] trong sub sequence
+		Nhớ phải tìm cái last_ind: vị trí của phần tử cuối trong solution vì T[i] chỉ lưu liền trước
+		Sau đó while(ans--){cout<<a[i]; i=T[i];} //dãy có ans phần tử nến while(ans--)
+	C2: Greedy + D&C Algorithms (D&C Divide and Conquer) => O(nlogk)
+		Ta duy trì 1 mảng L[] luôn tăng
+		+ L[i] là gía trị kết thúc nhỏ nhất có thể  cho chuỗi con
+		    tăng có độ dài i 	(thực ra là L[i-1]);  //greedy
+		    chuỗi con có độ dài i thì gía trị đứng cuối tốt nhất
+		    hiện tại là L[i]
+		+ T[i] truy vết lưu vị trí của phần tử đứng trước phần tử 
+			i

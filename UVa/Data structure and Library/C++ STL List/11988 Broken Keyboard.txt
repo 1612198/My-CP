@@ -1,0 +1,3 @@
+ Lưu ý list<char> ans;
+    + insert, remove với O(1) (amozlized time)
+

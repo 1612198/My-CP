@@ -1,0 +1,18 @@
+Median: Trung vị
+Cho biến ngẫu nhiên X
+Trung vị của biến ngẫu nhiên X là Med(X)=m (thuộc bnn X)
+sao cho  P(X<=m) >=1/2
+      và P(X>=m) >=1/2
+Cách tìm: Để tìm số trung vị của một danh sách hữu hạn các số, ta xếp
+tăng dần tất cả các quan sát rồi lấy giá trị nằm giữa danh sách. Nếu số
+quan sát là số chẵn, thì cả 2 số nằm giữa và tất cả các giá trị giữa chúng
+đều là trung vị của X, người ta thường lấy giá trị trung bình  của 2 giá
+trị nằm giữa.
+
+nth_element: (search google có nhiều dạng cú pháp khác)
+cú pháp: void nth_element( RandomIt first, RandomIt nth, RandomIt last );
+ý nghĩa: nth_element là 1 thuật toán sắp xếp cục bộ các elements trong [first,last)
+        nó đưa giá trị vốn dĩ sẽ ở vị trí nth (sau khi sort) về vị trí nth,
+        nhưng nó ko sort full dãy, các elements before new value at nth position
+        < nth position values (nhưng ko có sort đâu nhé), tương tự nửa sau là lớn hơn
+        nhưng cũng chưa được sort tử tế đâu.

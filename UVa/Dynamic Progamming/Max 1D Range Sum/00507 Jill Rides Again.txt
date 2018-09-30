@@ -1,0 +1,27 @@
+Abridged Problem: 
+	Cho 1 mảng A chứa n (<=2.10^4) số nguyên ko âm, xác định tổng lớn nhất của dãy liên tiếp con A (Max 1D Range Sum)
+Approval:
+- Cách 1: A complete Search algorithm quét qua tất cả các cặp i,j tốn O(n^2) rồi lại tính tổng các số trong range[i,j] 
+	sum=a[i]+a[i+1]+a[i+2]+...+a[j] tốn O(n) 
+	=> Cách này tốn O(n^3) => Verdict: Time Limit Exceed (TLE)
+- Cách 2: Cải tiến cách 1 ở chỗ tính tổng các số trong range[i,j]
+	bằng cách tiền xử lý (pre-process)
+	Pre-Process: Với mọi i thuộc [1..n-1] a[i]+=a[i-1]
+	=> a[i] chính là tổng các số từ a[0] đến a[i] //kĩ thuật cộng dồn
+	Lúc này sum (range[i,j]) = a[j]-a[i-1] (mọi i>0)
+	 		i==0: sum(rang[0,j]) =a[j]
+	 => Giảm complexity time xuống còn O(n^2)
+- Cách 3: Kadane 's Algorithms
+	Xuất phát từ a[0], ta vừa chạy vừa tính tổng, nếu tổng này âm thì ta reset về 0 và lưu sum1 trước đó (trừ phần từ cộng vào làm nó âm, sum1>0,sum2=sum1+a âm <0, sum3 reset=0). Chạy tới cuối rồi ta tính max các sumi đã tính. This is because restarting from 0 is always better than continuing from a negative running sum. 
+	** DP Viewer: Tại mỗi phần tử a[i], ta có 2 lựa chọn
+		+ Hoặc là cộng vào range đang chạy (sum+=a[i])
+		+ Start new range  (sum=0)   
+		Gọi dp(i) là dãy con liên tiếp có tổng lớn nhất kết thúc tại a[i] (bắt đầu ở đâu thì t đéo biết). Thus, the final answer is the maximum sum of a range of values of dp(i) where i in [0..n-1].
+		Nếu chiều dài range là 0 thì answer 0.
+* Bài toán tìm solution
+	+ vấn đề 1: cho phép O(logN) mà tìm vị trí của x trong dãy a[] chưa sort
+	+ lower_bound(), upper_bound() áp dụng cho dãy sau khi đã sort (O(logN) sau khi dãy đã sort)
+	+ find() thì ko cần dãy đã sort nên dĩ nhiên là O(N) rồi (linear)
+	+ * 1 chút tỉnh táo chỗ hàm cmp(), nhớ là điều kiện = ghi lên trước cho khỏe.
+	+ còn chỗ int* vs auto: array thì int* còn vector thì auto (vector<int>:: iterator it);
+	s

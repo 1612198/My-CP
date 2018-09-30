@@ -1,0 +1,6 @@
+-- Trong directed Graph, SCC (Strongly Connected Component) được 
+quan tâm nhiều
+1 tập các vertices (v1,v2,..vn) là 1 SCC nếu với mọi 2 vertices 
+chọn ra trong tập luôn có path đi từ vx->vy và vy->vx,, tạo 
+thành 1 cycle
+ 

@@ -1,0 +1,21 @@
+Đề: Với số tiền bất kì, chọn ra max số lượng loại coins đổi được theo hàm được cho
+=> Ta đi tìm: Tập hợp P={c1,c2,...,ck};
+sao cho với mọi i thuộc [1;k] c1+c2+...+c(i-1)< ci
+Khi đó số lượng coins thu được: k => max
+chứng minh: 
+Gỉa sử tồn tại ci sao cho
+S+ci=c1+c2+...+ci > c[i+1]
+khi đó: ở S ta sẽ chọn c[i+1] (theo quy luật) và chưa chắc chọn c[i]
+Luc đó tổng còn lại S'=S+ci-c[i+1] < S=c1+c2+...+c[i-1] (vì ci<c[i+1])
+Suy ra S' còn chọn thêm được < i-1 coins
+|S'|+|c[i+1]| <i-1+1<i 
+Cho nên set P ko tồn tại loại coins nào có gía trị che mờ phần trưóc đó (như ci)
+thì số lượng sẽ đạt tối đa
+
+Nhận xét: 
+c1 & cn luôn đưọc chọn để đạt số loại coins tối đa
++ cn: ví dụ: Tổng S cho n max coins thì S+cn sẽ cho n+1>n coins
++ c1: Nếu mà chọn tổng sao cho chọn được 2 cái c2 (1 loại)để che đi cái c1
+      thì chi = ta gỉam S đi 1 để được 1 c2 và 1 c1(2 loại)
+
+Phải đi từ dưới lên (c1->cn) thì mới build được tập P nhiều phần tử nhất.

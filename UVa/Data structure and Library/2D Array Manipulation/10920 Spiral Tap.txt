@@ -1,0 +1,17 @@
+Bài này nếu ta duyệt qua hết tất cả các ô của mảng SZ*SZ và đánh số thì
+sẽ bị TLE bởi vì SZ=1e5 thì số ô của grid là 1e10 (>1e8) --> P: long long
+
+- Nếu để ý sẽ thấy góc phải của mỗi lớp sẽ là 1 số chính phương, là bình
+phương của 1,3,5, ... các số 1,3,5,...(root) đó cũng chính là SZ của grid chứa P
+nằm ở viền.
+- Từ đó ta xác định vị trí của P trong grid nhỏ đó (i,j)
+    i: số dòng chênh so với ô chứa 1  (i chạy từ -root/2 -> root/2)
+    j: số cột chênh so với ô chứa 1 (j chạy từ -root/2 -> root/2),
+    Để làm được điều này ta phải chia viền (đương nhiên là chứa P) ra
+    làm 4 side (0,1,2,3)
+    Cách chia: easy thì cứ xét xem P thuộc khoảng nào: vd (25->22) thì side 1
+                (18,21) side 1, (14,17) side 2, (10->13) thì side 3
+                (đương nhiên các số phải đổi ra root, p) 25=root*root, 22=root*root-root+1
+                ...
+                khó thì xét chia lấy nguyên hiệu từ (root*root-P)/(root-1) (mình làm)
+- Kết hợp với SZ lớn đề cho đề ra vị trí yêu cầu là i+SZ/2+1, j+SZ/2+1

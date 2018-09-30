@@ -1,0 +1,6 @@
+If there is no obvious greedy strategy, try sorting the data or
+introducing some tweak and see if a greedy strategy emerges.
+3 classical problems solvable with Greedy
++ Coin change (the special case)
++ Load Balancing (độ lệch chuẩn nhỏ nhất đó)
++ Interval Covering

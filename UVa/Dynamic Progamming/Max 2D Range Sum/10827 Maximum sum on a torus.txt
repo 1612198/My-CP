@@ -1,0 +1,23 @@
+Bài này khác ở chỗ là torus (hình khuyên)
+Nghĩa là cái mảng 2D A có thể quay đầu cả 2 phía, trái phải lẫn trên dưới
+Kĩ thuật xử lý cơ bản là từ mảng A ta nhân lên thành AA
+													 AA
+rồi tìm matrix con có tổng lớn nhất như bt miễn là số phầnt tử của mảng con đó
+phải < nxn
+2 cách xử lý
++ cách O(n^4): nhớ quy tắc inclusion-exclusion priciple
+		++ ta cộng sao cho ô a[i][j] chính là tổng của matrix từ (0,0)->(i,j)
+		++ => tổng của matrix (x+1,y+1) -> (i,j) = a[i][j]-a[i][y]-a[x][j]+a[x][y]
++ Cách dùng Kadane 's Algorithm đổ dọc xuống nhớ là tối đa n dòng & n cột
+	Cách xử lý tùy mỗi người, như mình là như trong code, ở phần xổ dọc xuống tối đa n nòng
+		++ Hoặc gặp SumRect (Sum Rectangle) trước khi đủ n dòng, nó sẽ tự ngắt và đếm lại dòng 0
+		++ Hoặc là dãy tốt quá, đủ n dòng vẫn dương thì ra reset lại SumRect=0, cnt=0 và chỉnh i về 
+		cái dòng tiếp theo ở biên trên để tiếp tục pattern nxn (con của 2nx2n) mới, bắt đầu từ 1 dòng,
+		2 dòng, .... Tính ra vấn O(n^4) 
+		nhưng rõ ràng là thời gian trung bình nó ngắn hơn.
+		NX: ta ko thể tiến theo chiều dọc dưới và gĩư nguyên size matrix là nxn
+		Vd: lúc đạt cnt=n thì biên trên là dòng i, biên dưới là dòng i+n-1
+		Khi dịch xuống mà ta xét quyên khung á, thì biên trên là i+1, dưới là i+n
+		Lỡ dòng i là dương, và dòng i+1 là âm nên cái tổng dòng(i) +dòng(i+1) nó dương nên liên tục (ta gĩư và tăng cnt)
+		còn giờ ta bỏ dòng(i) rồi thì việc gì phải mang theo thằng của nợ dòng(i+1). Đúng chưa?
+		Nên cách làm này là sai, ta phải đưa về dòng i+1 và xét lại từng 1 dòng, 2 dòng, ..., ngắt, 1 dòng, 2 dòng, ..n dòng.

@@ -1,0 +1,42 @@
+link tham khảo: https://saicheems.wordpress.com/2013/09/06/uva-10
+819-trouble-of-13-dots/
+Có 1 chút tweak (tinh chỉnh) đó là vấn đề money thay đổi theo lượng đã lấy:
+Ta nói khi mua >2000 thì money được + 200 đô
+vậy khi mà sức mua (w): 
++ w > m && m<=1800: thì con đường này vô vọng
+	c/m: ví dụ w>m && m<=1800 => w>1800, 
+		+ w thuoc [1800,2000] thi w luôn > m 
+		+ w thuoc (2000,+oo] thì max(m)+200=2000, đéo đủ
++ w > m+200: Lớn dữ quá, chấp cộng luôn: con đường cụt
++ (id==n) 
+	kiểm tra lại xem nếu mà w>m && w<=2000 thì cũng cụt luôn
+	còn lại ok
++ ...Tiếp
+Việc return -1000, đẻ cho ra + truy hồi lại các f[i] thì vẫn âm
+vì con đường nàyd đâu đi được.
+
+--Link bottom-Up: https://github.com/ajahuang/UVa/blob/master/UVa%2010819%20-%20Trouble%20of%2013-Dots.cpp
+Đặt c[j]: stores the maximum favour value of spending exactly j$
+	nghĩa là: lưu gía trị lớn nhất khi mua với số tiền chính xác là j$
+	Lúc đó:
+	Khi duyệt đến món đồ thứ i nếu mà c[j-P[i]]!=0 || j==P[i] 
+	nghia là có thể mua thằng i được, vì nhỡ TH c[j-P[i]]==0, 
+	nghia là tiền nó bị lẻ, mua thằng P[i] xong là no còn dư tiền
+
+** Vấn đề m: (đề cho) 
+Gỉa sử đáp án thu được là: gía trị = V, số tiền mua là M
+thì:
+Ta thấy:    M<=m: ok
+			M>m+200: auto loại
+			còn TH:  m<M<=m+200 (tùy hứng)
+Xét m<=1800:
+	khi m<M<=m+200<=1800+200=2000: lúc này thì chưa đưọc phép m+200 nên việc M>m là loại.
+	==>KL: Với m<=1800: M <=m 
+Xét m>2000:
+	Khi m<M<=m+200 =>2000<m<M<=m+200: vì M>2000 nên m+200 là điều chắc chắn đã có cộng, nên 
+	==> Với m>2000 thì M<=m || M<=m+200 <=> M<=m+200
+Xét 1800<m<=2000: 
+	Khi m<M<=m+200
+	+ m<M<=2000: lúc này chưa được phép + 200 nên chỉ việc m<M thôi là LOẠI nhé.
+	+ 2000<M<=m+200: vì M>2000 nên m+200 hoàn toàn xảy ra => CHỌN
+	==> Với 1800<m<=2000: thì M<=m hoặc 2000<M<=m+200 

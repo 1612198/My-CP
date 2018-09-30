@@ -1,0 +1,3 @@
+Có 2 cách làm đối với bài này:
+Cách 1: Simulate lại quá trình, chú ý dùng class cho gọn nhẹ, chuyển hướng các kiểu, cẩn thận
+Cách 2: Đồ thị hóa.

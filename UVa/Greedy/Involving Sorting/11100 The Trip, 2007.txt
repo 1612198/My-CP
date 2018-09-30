@@ -1,0 +1,9 @@
+Bài này phải nói là khá classic
+lấy những cái balo nhỏ bỏ vào lớn (>=2 balo) --> 1 piece
+Bỏ sao mà minimum số lượng piece và minimize the total number of bags in any one piece.
+* minimum số lượng piece: Ta sort rồi đếm phần tử nào trùng nhiều nhất. => chính nó
+* minimize the total number of bags in any one peice: ta dùng kĩ thuật rải đồng (ô ăn quan). Ví dụ số lượng peice là maxLug,
+cứ mỗi lượt ta chọn 0 cho peice 0
+                    1 cho peice 1
+                    maxLug-1 cho peice maxLug-1
+cứ như thế cho đến hết, nó khác với việc lấy tổng số bags n/maxLug thì sẽ ko tối ưu do số dư ở peice cuối chênh lệch.

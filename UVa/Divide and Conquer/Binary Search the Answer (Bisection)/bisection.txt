@@ -1,0 +1,22 @@
+Ý tưởng của phương pháp này là thử các đáp án theo kiểu nhị phân (bisection)
+int lo=first_answer, hi=end_answer;
+while(lo<hi){   //ko cần = vì lúc = là return ra kết quả rồi
+	int mid=(hi+lo)/2;
+	if(can(mid)) {
+		ta đang cần tìm cái gì thì điều chỉnh
+		vd nhỏ nhất thỏa mãn thì: hi=mid;
+		lớn nhất thỏa: lo=mid
+	}
+	else{
+		điều chỉnh lo (hi) 
+		(nhỏ nhất thỏa) lo=mid+1;
+		hi=mid-1
+	}
+	kết quả là lo=hi
+}
+*chỉ điều chỉnh 1 cái lo hoặc hi lên xuống 1 thông qua mid :) trong khi có EPS thì thậm chí ko cần vì điều kiện trong while 
+ là khoảng, còn này là phải chỉnh 1 cái chứ không nó loop.
+*Hàm can là hàm kiểm tra xem các phần tử trong khoảng có thể là đáp án hay ko, ở đây chỉ cần có thể nhé
+	Vì khi x có thể là đáp án
+	và trong các x thuộc range duyệt thì chắc chắn có 1 đáp án đúng
+	=> Ép xung quanh các "x có thể" chắc chắn sẽ ra cái cần tìm.

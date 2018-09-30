@@ -1,0 +1,14 @@
+1. Read input:
+    + Khi mà đọc vào số nguyên (scanf(),cin) nó đều tự động nuốt kí tự cách
+      hay xuống dòng sau đó. Còn nếu không có thì phải gets(char* ) cho nó
+      xuống dòng nhé.
+    + sscanf(s,"%d%d%d %c",&contestant,&problem,&time,&L);
+      sscanf giống với scanf có điều nó đọc vào từ chuỗi s.
+      Có thể thay thế bằng stringstream trong C++.
+
+    + Chú ý: char* gets (char* str); (của C++ 11)
+      Nếu encounter (gặp gỡ) end of file thì return null value nhưng str vẫn
+      không thay đổi nhé!
+2. Đề hơi bị phi thực tế ở chỗ submit Correct rồi vẫn có record submit lại
+    (hoặc đúng hoặc sai) và cách làm là ta lấy kết quả đầu tiên, những lần
+    sau đó coi như bỏ qua.

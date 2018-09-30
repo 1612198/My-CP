@@ -1,0 +1,15 @@
+2 chiều, ta hình dung ra cái bảng nhớ đề biết xây dựng như thế nào. Đấy ms là điều quan trọng,
+chứ không phải bắt chưóc.
+Chạy thử  1 vài ví dụ từ đó biết cách quy hoạch động thôi. :)))
+Link tham khao: https://github.com/svanegas/programming_solutions/blob/master/UVa/10306%20-%20e-Coins/10306.cpp
+
+** có thể sử dụng constructor của pair để khởi tạo
+vd: 
+	typedef pair<int,int> coin;
+	coin coins[300];	
+	int x,y;
+	cin>>x>>y;
+	coins[i]=coin(x,y);  //constructor coin(x,y); 
+Tương đương với;
+ 	pair<int,int> coins[300];
+ 	scanf("%d%d",&coins[i].first,&coins[i].second);

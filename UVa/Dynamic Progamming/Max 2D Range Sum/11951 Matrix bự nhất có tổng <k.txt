@@ -1,0 +1,6 @@
+Ta dùng cách O(n^4) kết hợp inclusion-exclusion principle
+ 	+ Để có thể tính tổng các ô trong ma trận (x,y) -> (i,j) với O(1)
+ 	+ Dùng 4 for để xét tất cả các ma trận con (x,y)->(i,j) và xem xem
+      cái nào có size (i-x+1)*(j-y+1) lớn nhất mà gía (price) nhỏ nhất không vượt quá  k
+Cách nhanh hơn O(n^3) Kadane 's Algorithms xổ dọc
+	+ Nhớ kĩ thuật mà nhích thằng i về tại đó để i++ là chu kì kế tiếp.

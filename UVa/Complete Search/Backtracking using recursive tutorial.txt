@@ -1,0 +1,19 @@
+Xác định cấu hình của dãy cần tìm: 
+	vd: mảng các kí tự: vector<char> ans;
+Form:
+	void backtrack(int pos)  //trong main ta sẽ bắt đầu với lời gọi backtrack(0);
+	{
+		if(pos==n) {   //basecase
+			//ghi nhận 1 đáp án
+		}
+		else{
+			for(tât cả các trường hợp ans[pos] có thể nhận){
+				pos++;
+				ans.push_back(phần tử ghi nhận);
+				backtrack(pos);
+				pos--;
+				ans.pop_back();
+			}
+		}
+	}
+Trong main chú ý các gía trị khởi tạo cho ans.

@@ -1,0 +1,12 @@
+Bài này ta rút ra 1 số nhận xét:
+1. Cube N chiều thì có 2^N góc
+2. VD (N=3) thì có 8 góc chạy theo các tọa độ dạy nhị phân (0,0,0),
+   (0,0,1),(0,1,0),(0,1,1),(1,0,0),(1,0,1),(1,1,0),(1,1,1)
+   (i chạy từ 0->7)
+3. Với một góc i (0->7) thì các góc neighbor của nó là N (3) góc khi ta
+lần lượt nhích từng dimension (x,y,z)lên 1 (or -1) nghĩa là ta đi so từng
+tọa độ với 1
+    vd (0,0,0) thì có 3 neighbors là (0,0,1),(0,1,0),(1,0,0)
+        (1,0,0) có 3 neighbors là (1,0,1),(1,1,0), (0,1,1)
+    Suy ra, các góc neighbor là các góc b sao cho
+       b= i ^ (1<<k) với k chạy từ 0 đến N-1

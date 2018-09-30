@@ -1,0 +1,10 @@
+4 Edges Classification:
++ Tree Edge: 'low'-> 'high', v is direct descendant u (con)
++ Back Edge: 'high'->'low', v trở về u, u: ancestor của v
+				u: cha, (v,u) bidirectional Edge
+				u: ông, (v,u) cycle
++ Forward Edge: 'low'-> 'high', not tree Edge, not direct 
+				descendant, u là ông của v (not cha)
++ Cross Edge: Ko có quan hệ huyết thống, trong 1 con đường này có thể đi qua lại, con đường khác cũng vậy,
+ quan trọng 'high'-> 'low'
+ ** u: high   v: low

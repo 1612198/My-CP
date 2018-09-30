@@ -1,0 +1,6 @@
+Đầu tiên, Product có nghĩa là tích chứ không phải là sản phẩm :v
+Cách gỉai bài này có đôi chút khác với Maximum range Sume 
+ở chỗ là khi mà Product nó <0 thì k thể reset về 0 vì nhỡ đâu số sau đó nó âm đâm ra nó dương bự.
+Vậy cho nên,ta sẽ xét vị trí xuất phát chứ ko thể xét vị trí kết thúc được, cái nào lớn thì ta hốt thôi.
+Cho i chạy từ đầu đến cuối là phần tử xuất phát của range, sau đó j chạy từ i đến n (lần lưọt 1 thừa số, 2 thừa số, ... n-i+1 thừa số) và cứ được cái nào tích (product) bự thì ta lấy, Duyệt qua tất cả các vị trí xuất phát (i) và kết thúc (j) = 2 dòng for là 
+O(n^2) mà n<100 nên ok, Vấn đề là mỗi số là <10^5 mà 100 số nghĩa là (10^5)^(10^2)=10^500, quá lớn đối với C++ integer nên ta phải sử dụng đến BigInteger của java.

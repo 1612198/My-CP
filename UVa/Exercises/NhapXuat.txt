@@ -1,0 +1,3 @@
+std::ios::sync_with_stdio(false);
+Ý nghĩa: đồng bộ các stream bên C++ vs C. Nhanh hơn C, tránh lỗi ngớ ngẩn.
+	
